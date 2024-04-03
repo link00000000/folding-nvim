@@ -92,7 +92,7 @@ function M.fold_handler(err, result, ctx, config)
       -- XXX: this is dirty
       vim.wait(100)
       M.update_folds()
-    else
+    elseif result ~= nil then
       for _, fold in ipairs(result) do
         fold['startLine'] = M.adjust_foldstart(fold['startLine'])
         fold['endLine'] = M.adjust_foldend(fold['endLine'])
